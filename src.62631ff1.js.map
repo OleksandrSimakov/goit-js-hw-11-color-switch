@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["colors"],"mappings":";;;AAaA,aAZA,QAAA,gBAGA,IAAMA,EAAS,CACb,UACA,UACA,UACA,UACA,UACA","file":"src.62631ff1.js","sourceRoot":"../src","sourcesContent":["// import\nimport './styles.css';\n\n// const\nconst colors = [\n  '#FFFFFF',\n  '#2196F3',\n  '#4CAF50',\n  '#FF9800',\n  '#009688',\n  '#795548',\n];\n\n// code\n"]}
