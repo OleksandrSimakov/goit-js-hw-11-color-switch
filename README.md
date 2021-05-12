@@ -1,2 +1,3 @@
-# goit-js-hw-10-food-service
-Симаков ДЗ№10
+# goit-js-hw-11-color-switch
+
+Симаков ДЗ№11
