@@ -196,7 +196,43 @@ require("./styles.css");
 
 // import
 // const
-var colors = ['#FFFFFF', '#2196F3', '#4CAF50', '#FF9800', '#009688', '#795548']; // code
+var colors = ['#FFFFFF', '#2196F3', '#4CAF50', '#FF9800', '#009688', '#795548'];
+var refs = {
+  start: document.querySelector('button[data-action="start"]'),
+  stop: document.querySelector('button[data-action="stop"]'),
+  bodyEl: document.querySelector('body')
+};
+
+var randomIntegerFromInterval = function randomIntegerFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+var COLOR_CHANGE_DELAY = 1000;
+var intervalId = null; // element selection
+
+refs.start.addEventListener('click', onStartClick);
+refs.stop.addEventListener('click', onStopClick); // functions
+
+function onStartClick() {
+  disableStart();
+  intervalId = setInterval(function () {
+    console.log(randomIntegerFromInterval(0, colors.length));
+    refs.bodyEl.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length)];
+  }, COLOR_CHANGE_DELAY);
+}
+
+function disableStart() {
+  refs.start.setAttribute('disabled', true);
+}
+
+function onStopClick() {
+  enableStart();
+  clearInterval(intervalId);
+}
+
+function enableStart() {
+  refs.start.removeAttribute('disabled', true);
+}
 },{"./styles.css":"styles.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -225,7 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52320" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53477" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
